@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nairobi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.8219, -1.2921]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mombasa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [39.6682, -4.0435]
+      }
+    }
+  ]
+}
