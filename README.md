@@ -9,19 +9,19 @@ The app automatically loads `.geojson` files from `src/data` and displays them a
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/JohnSaita/geo-intelligence-lab-starter.git
 cd geo-intelligence-lab-starter
 ```
 
 ### 2. Add your Mapbox token
 
-Create a `.env` file in the project root:
+Open the `.env` file in the project root:
 
 ```bash
 VITE_MAPBOX_TOKEN=pk.your_mapbox_public_token_here
 ```
 
-Use a public Mapbox access token that starts with `pk.`.
+Use a public Mapbox access token that starts with `pk.` from mapbox.
 
 ### 3. Add GeoJSON data
 
