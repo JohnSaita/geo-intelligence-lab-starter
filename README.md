@@ -58,10 +58,10 @@ Two details worth reading in `MapCanvas.tsx`: a circle layer also draws the vert
 
 ## Deploy to GitHub Pages
 
-The included workflow (`.github/workflows/deploy.yml`) builds the app on every push and publishes it to the `gh-pages` branch. One-time setup:
+The included workflow (`.github/workflows/deploy.yml`) builds the app on every push and publishes it with GitHub Pages. No `gh-pages` branch is needed. One-time setup:
 
 1. **Secret.** Repository Settings, Secrets and variables, Actions, New repository secret. Name: `VITE_MAPBOX_TOKEN`. Value: your public `pk.` token.
-2. **Pages.** Settings, Pages, Source: *Deploy from a branch*, Branch: `gh-pages`, folder `/ (root)`.
+2. **Pages.** Settings, Pages, Build and deployment, Source: *GitHub Actions*.
 3. **Token restrictions.** In your Mapbox token settings add `https://<your-username>.github.io/` under URL restrictions. A public token is visible in the built site, so the restriction is what protects it.
 4. Push to `main` or `master`. The site appears at `https://<your-username>.github.io/<repo-name>/`.
 
