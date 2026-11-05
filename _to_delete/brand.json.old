@@ -1,0 +1,42 @@
+{
+  "channel": "Geo Intelligence Lab",
+  "presenter": "John S Nkaiwatei",
+  "tagline": "GIS & web mapping",
+  "services": [
+    "Health & accessibility analysis",
+    "Disease & risk mapping",
+    "Interactive web maps (React + Mapbox GL JS)",
+    "Custom GIS web applications"
+  ],
+  "links": {
+    "portfolio": "johnsaita.github.io",
+    "developer_kit": "pagea.uk/developerkit"
+  },
+  "colors": {
+    "navy_bg": "#0B2E5C",
+    "offwhite_bg": "#FCFCFA",
+    "blue": "#2A7AD5",
+    "orange": "#EE6A35",
+    "ink": "#FFFFFF",
+    "muted": "#B8C4D6"
+  },
+  "fonts": {
+    "headline": "Segoe UI Bold (fallback: Inter Bold / Montserrat Bold)",
+    "body": "Segoe UI (fallback: Inter)"
+  },
+  "captions": {
+    "style": "white text, black outline 4px, bottom third, max 2 lines",
+    "max_chars_16x9": 46,
+    "max_chars_9x16": 26
+  },
+  "watermark": "Geo Intelligence Lab, top-left, 60% opacity",
+  "audio": {
+    "loudness_lufs": -14,
+    "true_peak_db": -1.5,
+    "music": "ambient/electronic bed, no lyrics, ducked about 20 dB under the voice"
+  },
+  "end_card": {
+    "seconds": 3.5,
+    "lines": ["John S Nkaiwatei", "GIS & web mapping", "{{services}}", "See more: johnsaita.github.io"]
+  }
+}

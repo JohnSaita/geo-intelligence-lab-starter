@@ -30,9 +30,17 @@ Open the URL Vite prints. Restart `npm run dev` after you edit `.env`; Vite read
 - **Keep the old workflow:** `.geojson` files placed in `src/data` still load on startup.
 - **Phone friendly:** the panel becomes a bottom sheet.
 
-## Make it yours
+## Brand
 
-Edit `src/config.ts`. It holds the name, the "Work with me" card text, the links, the basemaps and the layer colours. Change them and the whole interface follows. The colour tokens are at the top of `src/index.css`.
+The look comes from the Geo Intelligence Lab brand kit v2.0:
+
+- `src/brand-tokens.css` is a copy of the kit's `09-design-tokens/tokens.css` (`--gil-*` colour variables). `src/index.css` maps them to the app's own names.
+- `src/assets/` holds the official horizontal logos (reversed on the navy panel header, full colour on the token screen). Keep the logo at 160 px wide or more.
+- `public/` holds the favicons, app icons, `site.webmanifest` and the social share image from the kit.
+- Layer colours and the amber selection highlight come from the kit's map palette (`mapbox-expressions.js`). Amber is reserved for the selected feature and the single "Work with me" button.
+- Type is Montserrat (headings), Inter (interface) and JetBrains Mono (coordinates), bundled as woff2 in `src/fonts` (SIL Open Font License, see `src/fonts/README.txt`).
+
+To update the brand, replace those files from the kit and rebuild. Text, links, basemaps and layer colours are in `src/config.ts`.
 
 ## Where things live
 
@@ -48,13 +56,16 @@ Edit `src/config.ts`. It holds the name, the "Work with me" card text, the links
 
 Two details worth reading in `MapCanvas.tsx`: a circle layer also draws the vertices of lines and polygons, and a fill layer shades the area between the vertices of a line, so each layer carries a `geometry-type` filter.
 
-## Deploy
+## Deploy to GitHub Pages
 
-```bash
-npm run build      # output in dist/
-```
+The included workflow (`.github/workflows/deploy.yml`) builds the app on every push and publishes it to the `gh-pages` branch. One-time setup:
 
-Host `dist/` on Vercel, Netlify or GitHub Pages. Set `VITE_MAPBOX_TOKEN` in the host's settings, and in your Mapbox token settings add your site's URL under URL restrictions. Never use a secret `sk.` token in front-end code.
+1. **Secret.** Repository Settings, Secrets and variables, Actions, New repository secret. Name: `VITE_MAPBOX_TOKEN`. Value: your public `pk.` token.
+2. **Pages.** Settings, Pages, Source: *Deploy from a branch*, Branch: `gh-pages`, folder `/ (root)`.
+3. **Token restrictions.** In your Mapbox token settings add `https://<your-username>.github.io/` under URL restrictions. A public token is visible in the built site, so the restriction is what protects it.
+4. Push to `main` or `master`. The site appears at `https://<your-username>.github.io/<repo-name>/`.
+
+Other hosts (Vercel, Netlify): run `npm run build`, publish `dist/`, and set `VITE_MAPBOX_TOKEN` in the host's settings. Never use a secret `sk.` token in front-end code.
 
 ## Data
 

@@ -1,22 +1,57 @@
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/Inter-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/Montserrat-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/Montserrat-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
 :root {
-  --navy: #0b2e5c;
-  --navy-2: #16427f;
-  --blue: #2a7ad5;
-  --orange: #ee6a35;
-  --orange-press: #d95a27;
-  --paper: #fcfcfa;
-  --ink: #14233b;
-  --slate: #5b6b82;
-  --line: rgb(11 46 92 / 13%);
-  --soft: #eef3f9;
+  /* Palette from the brand kit (brand-tokens.css is a copy of 09-design-tokens/tokens.css).
+     Only palette tokens are used here, so the kit's dark-mode block doesn't change this app. */
+  --navy: var(--gil-navy);
+  --navy-2: var(--gil-navy2);
+  --teal: var(--gil-teal);
+  --ocean: var(--gil-ocean);
+  --amber: var(--gil-amber);
+  --paper: var(--gil-paper);
+  --soft: var(--gil-mist);
+  --line: var(--gil-line);
+  --slate: var(--gil-slate);
+  --ink: var(--gil-navy);
+  --on-navy-muted: #9fc9d6;
   --warn-bg: #fff4dd;
   --warn-ink: #6b4a00;
   --error-bg: #fdecea;
   --error-ink: #8a1f17;
-  --shadow: 0 10px 34px rgb(11 46 92 / 20%), 0 2px 6px rgb(11 46 92 / 10%);
+  --shadow: 0 10px 34px color-mix(in srgb, var(--navy) 20%, transparent), 0 2px 6px color-mix(in srgb, var(--navy) 10%, transparent);
 
-  --font: "Segoe UI", Inter, system-ui, -apple-system, Roboto, sans-serif;
-  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: Montserrat, Inter, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
 
   font: 400 14px/1.45 var(--font);
   color: var(--ink);
@@ -58,6 +93,11 @@ ol {
   list-style: none;
 }
 
+h1,
+h2 {
+  font-family: var(--display);
+}
+
 button,
 input {
   font: inherit;
@@ -68,11 +108,11 @@ button {
 }
 
 a {
-  color: var(--blue);
+  color: var(--ocean);
 }
 
 :focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--ocean);
   outline-offset: 2px;
 }
 
@@ -94,7 +134,7 @@ a {
   min-height: 38px;
   padding: 0 14px;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -102,18 +142,18 @@ a {
 }
 .btn--primary {
   color: #fff;
-  background: var(--blue);
+  background: var(--teal);
 }
 .btn--primary:hover {
-  background: #1f68bd;
+  background: color-mix(in srgb, var(--teal), black 16%);
 }
 .btn--cta {
-  color: #fff;
-  background: var(--orange);
-  box-shadow: 0 4px 14px rgb(238 106 53 / 35%);
+  color: var(--navy);
+  background: var(--amber);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--amber) 45%, transparent);
 }
 .btn--cta:hover {
-  background: var(--orange-press);
+  background: color-mix(in srgb, var(--amber), black 8%);
 }
 .btn--ghost {
   min-height: 32px;
@@ -134,7 +174,7 @@ a {
   padding: 4px;
   border: 0;
   background: none;
-  color: var(--blue);
+  color: var(--ocean);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -170,26 +210,28 @@ a {
   overflow: hidden;
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: var(--shadow);
 }
 
 .panel__brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  color: #fff;
+  display: grid;
+  gap: 8px;
+  padding: 18px 18px 14px;
   background: var(--navy);
 }
+.panel__logo {
+  display: block;
+  width: calc(100% + 40px);
+  max-width: none;
+  height: auto;
+  margin: -14px -20px -10px;
+}
 .panel__brand h1 {
-  font-size: 16px;
+  color: #fff;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.2;
-}
-.panel__brand p {
-  color: #b8c4d6;
-  font-size: 12.5px;
 }
 
 .panel__body {
@@ -246,7 +288,7 @@ a {
   text-align: center;
   color: var(--navy);
   background: var(--soft);
-  border: 1.5px dashed rgb(42 122 213 / 55%);
+  border: 1.5px dashed color-mix(in srgb, var(--ocean) 55%, transparent);
   border-radius: 10px;
 }
 .drop h2 {
@@ -320,7 +362,7 @@ a {
   border-color: var(--navy);
 }
 .vis input:focus-visible + .vis__box {
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--ocean);
   outline-offset: 2px;
 }
 
@@ -431,7 +473,7 @@ a {
   padding: 18px 18px 16px;
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: var(--shadow);
 }
 .work__close {
@@ -467,7 +509,7 @@ a {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--teal);
 }
 .work__links {
   display: flex;
@@ -477,11 +519,15 @@ a {
   font-weight: 600;
 }
 .work__sig {
+  display: grid;
   margin-top: 12px;
   padding-top: 10px;
   border-top: 1px solid var(--line);
   color: var(--slate);
   font-size: 12.5px;
+}
+.work__sig strong {
+  color: var(--navy);
 }
 
 /* ---------- Feature inspector ---------- */
@@ -499,7 +545,7 @@ a {
   overflow-y: auto;
   background: var(--paper);
   border: 1px solid var(--line);
-  border-left: 4px solid #ffc21a;
+  border-left: 4px solid var(--amber);
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
@@ -585,6 +631,11 @@ a {
   border-radius: 16px;
   box-shadow: var(--shadow);
 }
+.gate__logo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+}
 .gate__card h1 {
   color: var(--navy);
   font-size: 22px;
@@ -616,7 +667,7 @@ a {
   overflow-x: auto;
   color: var(--ink);
   background: var(--soft);
-  border-left: 3px solid var(--blue);
+  border-left: 3px solid var(--ocean);
   border-radius: 6px;
 }
 .gate__foot {

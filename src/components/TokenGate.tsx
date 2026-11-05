@@ -1,5 +1,5 @@
 import { BRAND } from "../config";
-import { Logo } from "./Icons";
+import logo from "../assets/gil-logo-horizontal-full-color.svg";
 
 type Problem = "missing" | "secret" | "rejected";
 
@@ -23,7 +23,7 @@ export default function TokenGate({ problem }: { problem: Problem }) {
   return (
     <main className="gate">
       <div className="gate__card">
-        <Logo size={40} />
+        <img className="gate__logo" src={logo} alt={BRAND.name} />
         <h1>{title}</h1>
         <p>{body}</p>
         <ol>

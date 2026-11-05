@@ -3,7 +3,8 @@ import { useRef } from "react";
 import { BASEMAPS, BRAND } from "../config";
 import type { BasemapId } from "../config";
 import type { LayerEntry, Notice } from "../hooks/useLayers";
-import { CloseIcon, CheckIcon, Logo, TargetIcon, UploadIcon } from "./Icons";
+import logo from "../assets/gil-logo-horizontal-reversed.svg";
+import { CloseIcon, CheckIcon, TargetIcon, UploadIcon } from "./Icons";
 
 interface Props {
   layers: LayerEntry[];
@@ -36,11 +37,8 @@ export default function Panel({
   return (
     <aside className="panel" aria-label="Layers">
       <header className="panel__brand">
-        <Logo />
-        <div>
-          <h1>{BRAND.product}</h1>
-          <p>{BRAND.name}</p>
-        </div>
+        <img className="panel__logo" src={logo} alt={BRAND.name} />
+        <h1>{BRAND.product}</h1>
       </header>
 
       <div className="panel__body">

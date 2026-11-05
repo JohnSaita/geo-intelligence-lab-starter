@@ -51,18 +51,3 @@ export const ExternalIcon = (p: SVGProps<SVGSVGElement>) => (
     <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" />
   </svg>
 );
-
-export function Logo({ size = 34 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="#16427F" />
-      <path d="M3 24c4-2 8-2 13 0s9 2 13 0" stroke="#2A7AD5" strokeWidth="1.5" fill="none" />
-      <path d="M3 19.5c4-2 8-2 13 0s9 2 13 0" stroke="#2A7AD5" strokeWidth="1.5" fill="none" opacity=".6" />
-      <path
-        d="M16 5.5a5.4 5.4 0 0 0-5.4 5.4c0 4 5.4 9.6 5.4 9.6s5.4-5.6 5.4-9.6A5.4 5.4 0 0 0 16 5.5z"
-        fill="#EE6A35"
-      />
-      <circle cx="16" cy="10.9" r="2" fill="#fff" />
-    </svg>
-  );
-}

@@ -45,7 +45,7 @@ export default function WorkWithMe() {
             ))}
           </ul>
           <a className="btn btn--cta btn--block" href={BRAND.links.portfolio} target="_blank" rel="noreferrer">
-            See my portfolio <ExternalIcon width={15} height={15} />
+            See more: {BRAND.portfolioHost} <ExternalIcon width={15} height={15} />
           </a>
           <div className="work__links">
             <a href={BRAND.links.youtube} target="_blank" rel="noreferrer">
@@ -55,7 +55,10 @@ export default function WorkWithMe() {
               LinkedIn
             </a>
           </div>
-          <p className="work__sig">{BRAND.person}, {BRAND.name}</p>
+          <p className="work__sig">
+            <strong>{BRAND.person}</strong>
+            <span>{BRAND.tagline}</span>
+          </p>
         </section>
       )}
     </div>

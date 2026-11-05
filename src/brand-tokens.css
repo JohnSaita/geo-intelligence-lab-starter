@@ -1,0 +1,73 @@
+:root {
+  /* Geo Intelligence Lab — design tokens v2.0 */
+  --gil-navy: #071934; /* Deep Navy */
+  --gil-teal: #075A78; /* Teal Blue */
+  --gil-ocean: #087FA8; /* Ocean Blue */
+  --gil-cyan: #35B9C9; /* Signal Cyan */
+  --gil-green: #36A68A; /* Terrain Green */
+  --gil-green-dk: #1F7A63; /* Terrain Green Deep */
+  --gil-navy2: #0D2A4F; /* Midnight */
+  --gil-amber: #F4A62A; /* Survey Amber */
+  --gil-slate: #4A5D73; /* Slate */
+  --gil-line: #C9D8E2; /* Line */
+  --gil-mist: #E6F2F5; /* Mist */
+  --gil-paper: #F6F9FB; /* Paper */
+
+  /* Semantic */
+  --gil-bg: var(--gil-paper);
+  --gil-surface: #FFFFFF;
+  --gil-text: var(--gil-navy);
+  --gil-text-muted: var(--gil-slate);
+  --gil-primary: var(--gil-teal);
+  --gil-link: var(--gil-ocean);
+  --gil-accent: var(--gil-green-dk);
+  --gil-border: var(--gil-line);
+
+  /* Map palettes (Mapbox / OpenLayers) */
+  --gil-map-seq-1: #E6F2F5;
+  --gil-map-seq-2: #A9DCE3;
+  --gil-map-seq-3: #5FC0CF;
+  --gil-map-seq-4: #2A9CB8;
+  --gil-map-seq-5: #087FA8;
+  --gil-map-seq-6: #075A78;
+  --gil-map-seq-7: #0B3A5A;
+  --gil-map-seq-8: #071934;
+  --gil-map-div-1: #1F7A63;
+  --gil-map-div-2: #36A68A;
+  --gil-map-div-3: #8FD3BE;
+  --gil-map-div-4: #EEF3F1;
+  --gil-map-div-5: #F7CF8A;
+  --gil-map-div-6: #F4A62A;
+  --gil-map-div-7: #C9741B;
+  --gil-map-cat-1: #087FA8;
+  --gil-map-cat-2: #36A68A;
+  --gil-map-cat-3: #F4A62A;
+  --gil-map-cat-4: #E5636B;
+  --gil-map-cat-5: #7B6CD9;
+  --gil-map-cat-6: #35B9C9;
+  --gil-map-cat-7: #8A9BB0;
+
+  /* Type */
+  --gil-font-display: 'Montserrat', system-ui, sans-serif;
+  --gil-font-body: 'Inter', system-ui, sans-serif;
+  --gil-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --gil-radius-sm: 6px;
+  --gil-radius: 10px;
+  --gil-radius-lg: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --gil-bg: var(--gil-navy);
+    --gil-surface: var(--gil-navy2);
+    --gil-text: #FFFFFF;
+    --gil-text-muted: #9FC9D6;
+    --gil-primary: var(--gil-cyan);
+    --gil-link: var(--gil-cyan);
+    --gil-accent: var(--gil-green);
+    --gil-border: #1E3D63;
+  }
+}
+
+/* Google Fonts:
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"> */
